@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Colorstream</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        /*Qui inizia lo stile personalizzato del sito*/
+        .bg-dark {
+            --bs-bg-opacity: 1;
+            background-color: #dfe4f2 !important;
+        }
+
+        .navbar-dark,
+        .navbar[data-bs-theme=dark] {
+            --bs-navbar-color: #000;
+        }
+
+        @import url("./font/Montserrat.css");
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .nav-link {
+            --bs-nav-link-color: #495057;
+            --bs-nav-link-hover-color: #495057;
+            font-weight: bold;
+        }
+
+        .login {
+            /* colore testo */
+            --bs-btn-color: #495057;
+            /* colore testo hoverato */
+            --bs-btn-hover-color: #495057;
+            /* colore sfondo */
+            background-color: #fff;
+            /* colore sfondo hoverato */
+            --bs-btn-hover-bg: #DBEFE1;
+            /* colore bordo */
+            --bs-btn-border-color: #495057;
+            /* colore bordo hoverato */
+            --bs-btn-hover-border-color: #495057;
+            /* colore sfondo quando cliccato */
+            --bs-btn-active-bg: #DBEFE1;
+            /* colore bordo quando cliccato */
+            --bs-btn-active-border-color: #495057;
+        }
+
+        .registra {
+            /* colore testo */
+            --bs-btn-color: #495057;
+            /* colore testo hoverato */
+            --bs-btn-hover-color: #495057;
+            /* colore sfondo */
+            background-color: #fff;
+            /* colore sfondo hoverato */
+            --bs-btn-hover-bg: #D1EEF9;
+            /* colore bordo */
+            --bs-btn-border-color: #495057;
+            /* colore bordo hoverato */
+            --bs-btn-hover-border-color: #495057;
+            /* colore sfondo quando cliccato */
+            --bs-btn-active-bg: #D1EEF9;
+            /* colore bordo quando cliccato */
+            --bs-btn-active-border-color: #495057;
+        }
+
+        .custom-button-login {
+            /* colore testo */
+            --bs-btn-color: #495057;
+            /* colore testo hoverato */
+            --bs-btn-hover-color: #495057;
+            /* colore sfondo */
+            background-color: #fff;
+            /* colore sfondo hoverato */
+            --bs-btn-hover-bg: #DBEFE1;
+            /* colore bordo */
+            --bs-btn-border-color: #495057;
+            /* colore bordo hoverato */
+            --bs-btn-hover-border-color: #495057;
+            /* colore sfondo quando cliccato */
+            --bs-btn-active-bg: #DBEFE1;
+            /* colore bordo quando cliccato */
+            --bs-btn-active-border-color: #495057;
+        }
+
+        .custom-button-registra {
+            /* colore testo */
+            --bs-btn-color: #495057;
+            /* colore testo hoverato */
+            --bs-btn-hover-color: #495057;
+            /* colore sfondo */
+            background-color: #fff;
+            /* colore sfondo hoverato */
+            --bs-btn-hover-bg: #D1EEF9;
+            /* colore bordo */
+            --bs-btn-border-color: #495057;
+            /* colore bordo hoverato */
+            --bs-btn-hover-border-color: #495057;
+            /* colore sfondo quando cliccato */
+            --bs-btn-active-bg: #D1EEF9;
+            /* colore bordo quando cliccato */
+            --bs-btn-active-border-color: #495057;
+        }
+
+        .custom-button-guardasu {
+            /* colore testo */
+            --bs-btn-color: #495057;
+            /* colore testo hoverato */
+            --bs-btn-hover-color: #fff;
+            /* colore sfondo */
+            background-color: #fff;
+            /* colore sfondo hoverato */
+            --bs-btn-hover-bg: #6C757D;
+            /* colore bordo */
+            --bs-btn-border-color: #495057;
+            /* colore bordo hoverato */
+            --bs-btn-hover-border-color: #495057;
+            /* colore sfondo quando cliccato */
+            --bs-btn-active-bg: #6C757D;
+            /* colore bordo quando cliccato */
+            --bs-btn-active-border-color: #495057;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .abab {
+            background-color: white;
+            color: deeppink;
+        }
+
+        .clickable-card {
+            cursor: pointer;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        .dropdown-menu {
+            --bs-dropdown-link-active-bg: #495057;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="../logo/Colorstream Logo.png" height="100px">
+                </a>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="../index.html" class="nav-link px-2">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link link-secondary px-2 dropdown-toggle" href="#" id="filmDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Film
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="filmDropdown">
+                        <li><a class="dropdown-item" href="./film.html">Catalogo</a></li>
+                        <li><a class="dropdown-item" href="./account.html">Account personale</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html" class="nav-link px-2">Chi siamo</a></li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn login btn-outline-primary me-2" data-bs-toggle="modal"
+                    data-bs-target="#modalLogin">Accedi</button>
+                <button type="button" class="btn registra btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modalRegistrati">Registrati</button>
+            </div>
+        </header>
+    </div>
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5 abab">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light" style="font-weight: bolder !important;">Il tuo profilo</h1>
+                    <p class="lead text-body-secondary">La tua opinione per noi è importante. Clicca sul film e valuta
+                        il suggerimento per aiutarci a migliorare.</p>
+                    <p class="lead text-body-secondary"><b>I film che hai guardato</b>:</p>
+                    <!-- <p>
+          <a href="#" class="btn btn-primary my-2">Main call to action</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="jumbotron text-center">
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <!--MOONRISE KINGDOM-->
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow clickable-card" data-bs-toggle="modal"
+                                data-bs-target="#modalMoonrise">
+                                <img src="../immagini/Moonrise Kingdom scene.jpg" class="ratio ratio-16x9 card-img-top"
+                                    width="100%" height="225" role="img" aria-label="Thumbnail" focusable="false">
+                                <div class="card-body">
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#7BA6A1"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#BFB47A"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#909E62"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#BF6430"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#A64724"></rect>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <!-- Modal 1 -->
+                            <div class="modal fade" id="modalMoonrise" tabindex="-1" aria-labelledby="modal1Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal1Label">Ti è piaciuto questo film?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../immagini/Moonrise Kingdom poster.jpg"
+                                                class="ratio ratio-3x2 card-img-top" class="card-body">
+                                            <p><br><b><i>MOONRISE KINGDOM - UNA FUGA D'AMORE</i></b> (<i>MOONRISE
+                                                    KINGDOM</i>)</br>
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-hand-thumbs-up-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                                </svg></button>
+                                            <button type="button" class="btn btn-danger"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-hand-thumbs-down-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.378 1.378 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51.136.02.285.037.443.051.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.896 1.896 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2.094 2.094 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.162 3.162 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.823 4.823 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591z" />
+                                                </svg></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Chiudi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--CORALINE-->
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow clickable-card" data-bs-toggle="modal"
+                                data-bs-target="#modalCoraline">
+                                <img src="../immagini/Coraline scene.jpg" class="ratio ratio-16x9 card-img-top"
+                                    width="100%" height="225" role="img" aria-label="Thumbnail" focusable="false">
+                                <div class="card-body">
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#D9805F"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#FF8C2A"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#BF3617"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#55404D"></rect>
+                                    </svg>
+                                    <svg class="bd-placeholder-img rounded-circle" width="50" height="50"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <title>Placeholder</title>
+                                        <rect width="100%" height="100%" fill="#051E36"></rect>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <!-- Modal 1 -->
+                            <div class="modal fade" id="modalCoraline" tabindex="-1" aria-labelledby="modal1Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal1Label">Ti è piaciuto questo film?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="../immagini/Coraline poster.jpg"
+                                                class="ratio ratio-3x2 card-img-top" class="card-body">
+                                            <p><br><b><i>CORALINE E LA PORTA MAGICA</i></b> (<i>CORALINE</i>)</br>
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-hand-thumbs-up-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                                </svg></button>
+                                            <button type="button" class="btn btn-danger"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-hand-thumbs-down-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.378 1.378 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51.136.02.285.037.443.051.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.896 1.896 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2.094 2.094 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.162 3.162 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.823 4.823 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591z" />
+                                                </svg></button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Chiudi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--<div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+    </main>
+
+    <div class="modal fade" id="modalRegistrati" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Iscriviti gratis!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5 pt-0">
+                    <form class="" data-bitwarden-watching="1">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-3" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Indirizzo e-mail</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary custom-button-registra"
+                            type="submit">Registrati</button>
+                        <small class="text-body-secondary">Cliccando su "Registrati", accetti le condizioni di
+                            utilizzo.</small>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Accedi!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5 pt-0">
+                    <form class="" data-bitwarden-watching="1">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-3" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Indirizzo e-mail</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-3" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary custom-button-login" type="submit"><a
+                                href="./account.html" style="color:inherit">Accedi</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-body-secondary">&copy; Colorstream</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Risorse</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Google Images</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Pinterest</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="https://youtu.be/zDXr2Jke78g">YouTube</a>
+                    </li>
+                    <!-- <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li> -->
+                    <!-- <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li> -->
+                    <!-- <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li> -->
+                    <!-- <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li> -->
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Link utili</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="./html/about.html">Il nostro team</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="./account.html">Il tuo profilo</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Termini di utilizzo</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Privacy policy</a></li>
+                    <!--<li><a class="link-secondary text-decoration-none" href="#">FAQ</a></li>-->
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Contatti</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                            </svg> Via Verdi, 41 - 10124 Torino, Italia</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-envelope-at"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                                <path
+                                    d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
+                            </svg> support@colorstream.com</a></li>
+                    <li><a class="link-secondary text-decoration-none"
+                            href="https://www.instagram.com/__colorstream__/"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg> @__colorstream__</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div> -->
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-body-secondary">Si prega di notare che le immagini protette da copyright
+            utilizzate su questo sito web sono ritenute rientrare nell'ambito dell'uso lecito (fair use) secondo la
+            legge sul diritto d'autore. Le immagini sono utilizzate per un progetto universitario. Questa
+            dichiarazione non è intesa come una giustificazione legale, ma come spiegazione della nostra buona
+            fede.</small>
+        </div>
+      </div>
+    </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>

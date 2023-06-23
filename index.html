@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title>Colorstream</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/"> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    /*Qui inizia lo stile personalizzato del sito*/
+    .bg-dark {
+      --bs-bg-opacity: 1;
+      background-color: #dfe4f2 !important;
+    }
+
+    .navbar-dark,
+    .navbar[data-bs-theme=dark] {
+      --bs-navbar-color: #000;
+    }
+
+    @import url("./font/Montserrat.css");
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    .nav-link {
+      --bs-nav-link-color: #495057;
+      --bs-nav-link-hover-color: #495057;
+      font-weight: bold;
+    }
+
+    .login {
+      /* colore testo */
+      --bs-btn-color: #495057;
+      /* colore testo hoverato */
+      --bs-btn-hover-color: #495057;
+      /* colore sfondo */
+      background-color: #fff;
+      /* colore sfondo hoverato */
+      --bs-btn-hover-bg: #DBEFE1;
+      /* colore bordo */
+      --bs-btn-border-color: #495057;
+      /* colore bordo hoverato */
+      --bs-btn-hover-border-color: #495057;
+      /* colore sfondo quando cliccato */
+      --bs-btn-active-bg: #DBEFE1;
+      /* colore bordo quando cliccato */
+      --bs-btn-active-border-color: #495057;
+    }
+
+    .registra {
+      /* colore testo */
+      --bs-btn-color: #495057;
+      /* colore testo hoverato */
+      --bs-btn-hover-color: #495057;
+      /* colore sfondo */
+      background-color: #fff;
+      /* colore sfondo hoverato */
+      --bs-btn-hover-bg: #D1EEF9;
+      /* colore bordo */
+      --bs-btn-border-color: #495057;
+      /* colore bordo hoverato */
+      --bs-btn-hover-border-color: #495057;
+      /* colore sfondo quando cliccato */
+      --bs-btn-active-bg: #D1EEF9;
+      /* colore bordo quando cliccato */
+      --bs-btn-active-border-color: #495057;
+    }
+
+    .custom-button-login {
+      /* colore testo */
+      --bs-btn-color: #495057;
+      /* colore testo hoverato */
+      --bs-btn-hover-color: #495057;
+      /* colore sfondo */
+      background-color: #fff;
+      /* colore sfondo hoverato */
+      --bs-btn-hover-bg: #DBEFE1;
+      /* colore bordo */
+      --bs-btn-border-color: #495057;
+      /* colore bordo hoverato */
+      --bs-btn-hover-border-color: #495057;
+      /* colore sfondo quando cliccato */
+      --bs-btn-active-bg: #DBEFE1;
+      /* colore bordo quando cliccato */
+      --bs-btn-active-border-color: #495057;
+    }
+
+    .custom-button-registra {
+      /* colore testo */
+      --bs-btn-color: #495057;
+      /* colore testo hoverato */
+      --bs-btn-hover-color: #495057;
+      /* colore sfondo */
+      background-color: #fff;
+      /* colore sfondo hoverato */
+      --bs-btn-hover-bg: #D1EEF9;
+      /* colore bordo */
+      --bs-btn-border-color: #495057;
+      /* colore bordo hoverato */
+      --bs-btn-hover-border-color: #495057;
+      /* colore sfondo quando cliccato */
+      --bs-btn-active-bg: #D1EEF9;
+      /* colore bordo quando cliccato */
+      --bs-btn-active-border-color: #495057;
+    }
+
+    .tizio {
+      /* Vi presentiamo Colorstream! */
+      background-color: white !important;
+      color: deeppink;
+    }
+
+    .tizio a:hover {
+      /* Cambia il colore hoverato di "Consulta catalogo" e "Iscriviti" */
+      color: #495057;
+      text-decoration-color: #495057;
+    }
+
+    .tizio a {
+      /* Cambia il colore di "Consulta catalogo" e "Iscriviti" */
+      color: #6c757d;
+      text-decoration-color: #6c757d;
+    }
+
+    .container {
+      max-width: 1320px !important;
+    }
+
+    .titolo1 {
+      color: #495057;
+    }
+
+    .corpo1 {
+      color: #6c757d;
+    }
+
+    .titolo2 {
+      color: #495057;
+    }
+
+    .corpo2 {
+      color: #6c757d;
+    }
+
+    .caio {
+      background-color: #D1EEF9 !important;
+    }
+
+    .sempronio {
+      background-color: #DBEFE1 !important;
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .dropdown-menu {
+      --bs-dropdown-link-active-bg: #495057;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/product.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="./logo/Colorstream Logo.png" height="100px">
+        </a>
+      </div>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="./index.html" class="nav-link px-2">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link link-secondary px-2 dropdown-toggle" href="#" id="filmDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Film
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="filmDropdown">
+            <li><a class="dropdown-item" href="./html/film.html">Catalogo</a></li>
+            <li><a class="dropdown-item" href="./html/account.html">Account personale</a></li>
+          </ul>
+        </li>
+        <li><a href="./html/about.html" class="nav-link px-2">Chi siamo</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn login btn-outline-primary me-2" data-bs-toggle="modal"
+          data-bs-target="#modalLogin">Accedi</button>
+        <button type="button" class="btn registra btn-primary" data-bs-toggle="modal"
+          data-bs-target="#modalRegistrati">Registrati</button>
+      </div>
+    </header>
+  </div>
+  <main>
+
+    <main>
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary tizio">
+        <div class="col-md-6 p-lg-5 mx-auto">
+          <h1 class="display-3 fw-bold">Vi presentiamo Colorstream!</h1>
+          <!--<h3 class="fw-normal text-muted mb-3">Blah blah blah</h3>-->
+          <div class="d-flex gap-3 justify-content-center lead fw-normal">
+            <a class="icon-link" href="html/film.html">
+              Consulta il catalogo
+              <!-- <svg class="bi"><use xlink:href="#chevron-right"/></svg> -->
+            </a>
+            <a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalRegistrati">
+              Iscriviti
+              <!-- <svg class="bi"><use xlink:href="#chevron-right"/></svg> -->
+            </a>
+          </div>
+        </div>
+        <!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
+        <!-- <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden caio">
+          <div class="my-3 py-3">
+            <h2 class="display-5 titolo1">Come nasce Colorstream?</h2>
+            <p class="lead corpo1">Un problema ormai tipico tra gli utenti delle piattaforme di streaming è il
+              cosiddetto “paradosso della scelta”. Una delle barriere all’utilizzo dello streaming è, infatti, l'enorme
+              quantità di film e
+              serie TV proposte, che portano lo spettatore a trovarsi davanti a una paralisi decisionale. Colorstream si
+              pone come soluzione a questo problema, aiutando l’utente nella sua scelta
+              a partire da un catalogo di palette cromatiche, ovvero delle combinazioni di colori che rappresentano i
+              colori dominanti all'interno dei film.</p>
+          </div>
+          <div class="text-bg-dark shadow-sm mx-auto caio"><iframe width="560" height="315" src="./video/trailer.mp4"
+              title="YouTube video player" frameborder="0" class="object-fit-contain"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden sempronio">
+          <div class="my-3 p-3">
+            <h2 class="display-5 titolo2">Quale ruolo hanno i colori nei film?</h2>
+            <p class="lead corpo2">I film si servono dei colori per catturare l’attenzione degli spettatori e
+              trasmettere loro emozioni. L’accostamento dei colori nei film è tutt’altro che casuale: contribuisce a
+              descriverne gli scenari, serve a dare origine a una serie di
+              significati e a trasmettere uno stato d'animo o una sensazione che può rimanere nello spettatore anche
+              dopo la fine del film.</p>
+          </div>
+          <div class="bg-body-tertiary shadow-sm mx-auto sempronio"><iframe width="560" height="315"
+              src="https://www.youtube.com/embed/zDXr2Jke78g" title="YouTube video player" frameborder="0"
+              class="object-fit-contain"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="modal fade" id="modalRegistrati" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Iscriviti gratis!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-5 pt-0">
+                <form class="" data-bitwarden-watching="1">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput"
+                      placeholder="name@example.com">
+                    <label for="floatingInput">Indirizzo e-mail</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary custom-button-registra"
+                    type="submit">Registrati</button>
+                  <small class="text-body-secondary">Cliccando su "Registrati", accetti le condizioni di
+                    utilizzo.</small>
+                  <hr class="my-4">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Accedi!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body p-5 pt-0">
+                <form class="" data-bitwarden-watching="1">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput"
+                      placeholder="name@example.com">
+                    <label for="floatingInput">Indirizzo e-mail</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary custom-button-login" type="submit"><a
+                      href="html/account.html" style="color:inherit">Accedi</a></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">Another headline</h2>
+        <p class="lead">And an even wittier subheading.</p>
+      </div>
+      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+  </div>-->
+    </main>
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-body-secondary">&copy; Colorstream</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Risorse</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="#">Google Images</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Pinterest</a></li>
+            <li><a class="link-secondary text-decoration-none" href="https://youtu.be/zDXr2Jke78g">YouTube</a></li>
+            <!-- <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li> -->
+            <!-- <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li> -->
+            <!-- <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li> -->
+            <!-- <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li> -->
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Link utili</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="./html/about.html">Il nostro team</a></li>
+            <li><a class="link-secondary text-decoration-none" href="./html/account.html">Il tuo profilo</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Termini di utilizzo</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Privacy Policy</a></li>
+            <!--<li><a class="link-secondary text-decoration-none" href="#">FAQ</a></li>-->
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Contatti</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                </svg> Via Verdi, 41 - 10124 Torino, Italia</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                  <path
+                    d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                  <path
+                    d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
+                </svg> support@colorstream.com</a></li>
+            <li><a class="link-secondary text-decoration-none" href="https://www.instagram.com/__colorstream__/"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg> @__colorstream__</a></li>
+          </ul>
+        </div>
+        <!-- <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+          </ul>
+        </div> -->
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-body-secondary">Si prega di notare che le immagini protette da copyright utilizzate su questo sito web sono ritenute rientrare nell'ambito dell'uso lecito (fair use) secondo la legge sul diritto d'autore. Le immagini sono utilizzate per un progetto universitario. Questa dichiarazione non è intesa come una giustificazione legale, ma come spiegazione della nostra buona fede.</small>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</html>
