@@ -241,6 +241,13 @@
     .dropdown-menu {
       --bs-dropdown-link-active-bg: #495057;
     }
+
+    @media (max-width: 600px) {
+      .vid-res {
+        width: fit-content;
+        height: fit-content;
+      }
+    }
   </style>
 
 
@@ -316,7 +323,7 @@
               colori dominanti all'interno dei film.</p>
           </div>
           <div class="text-bg-dark shadow-sm mx-auto caio"><iframe width="560" height="315" src="./video/trailer.mp4"
-              title="YouTube video player" frameborder="0" class="object-fit-contain"
+              title="YouTube video player" frameborder="0" class="object-fit-contain vid-res"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
@@ -332,7 +339,7 @@
           </div>
           <div class="bg-body-tertiary shadow-sm mx-auto sempronio"><iframe width="560" height="315"
               src="https://www.youtube.com/embed/zDXr2Jke78g" title="YouTube video player" frameborder="0"
-              class="object-fit-contain"
+              class="object-fit-contain vid-res"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
